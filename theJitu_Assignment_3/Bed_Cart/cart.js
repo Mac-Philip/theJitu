@@ -1,3 +1,11 @@
+/*sticky Header*/
+window.addEventListener("scroll", ()=> {
+  let headerContainer = document.querySelector("header");
+  let windowPosition = window.scrollY > 0;
+  headerContainer.classList.toggle("scroll-active", windowPosition);
+});
+
+
 /* image slider*/
 const slideImg = document.getElementById("sliderImg");
 
@@ -22,11 +30,3 @@ const slider = () => {
 
   setTimeout("slider()", 3000);
 };
-/*
-change navbar color on scroll
-window.addEventListener("scroll", ()=> {
-  let header = document.getElementsByClassName("container-header");
-  let windowPosition = window.scrollY > 0;
-  header.classList.toggle("scrolling-active", windowPosition);
-});
-*/
