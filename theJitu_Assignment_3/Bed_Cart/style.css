@@ -190,7 +190,7 @@ h1 {
   font-size: 1.2rem;
 }
 .hero-btn button:hover{
-    background:#000;
+    background:#e61c5f;
     color: #fff;
     transition: 500ms ease;
 }
