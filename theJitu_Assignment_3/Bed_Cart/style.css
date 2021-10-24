@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Festive&family=Montserrat:ital,wght@0,100;0,300;0,400;1,200;1,300&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap");
+
+:root {
+  --primaryColor: #f09d51;
+  --changingColor: #f01872;
+  --textColor: #000;
+  --mainGrey: #ececec;
+  --letterSpacing: 0.5rem;
+  --mainTransition: all 0.3s linear;
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +19,11 @@ ul {
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--textColor);
   font-size: 1.2rem;
 }
 .scroll-active {
-  background: #f01872;
+  background: var(--changingColor);
   box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
   color: #fff;
   z-index: 999;
@@ -23,6 +32,7 @@ a {
   position: sticky;
   top: -1px;
 }
+/*-------------------Header-----------------*/
 header {
   width: 100%;
   height: 4.9rem;
@@ -37,6 +47,7 @@ header {
   margin-left: 2%;
 }
 .nav {
+  
   width: 25%;
 }
 .nav-items {
@@ -52,14 +63,18 @@ header {
 }
 .nav-list:hover{
     transition:ease-in-out;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid var(--textColor);
+}
+.contact-num{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 .contact-num h3 {
   font-family: Festive, Pacifico, Arial, Helvetica, sans-serif;
   font-weight: 600;
-  cursor: pointer;
 }
-.nav-btn {
+.cart-btn {
   padding: 10px 30px 10px 30px;
   margin-right: 3%;
   font-size: 1.05rem;
@@ -68,7 +83,18 @@ header {
   border-radius: 5px;
   background: none;
   cursor: pointer;
+  position:relative;
+  display:flex;
 }
+.cart-items{
+  background:orange;
+}
+/*-----------------End of Header CSS section----*/
+
+
+
+
+/*--------------Slider Section--------------*/
 .slider-section {
   width: 100%;
   height: 37.5rem;
@@ -80,7 +106,7 @@ header {
   height: 100%;
   position: absolute;
   top: 0;
-  animation: fade 0.5s ease-out;
+  animation: fade 0.5s ease-in-out;
 }
 #sliderImg {
   width: 100%;
@@ -129,12 +155,12 @@ h1 {
 .prev-slide:hover {
   cursor: pointer;
   background-color: rgb(255, 255, 255, 0.8);
-  color: #000;
+  color: var(--textColor);
   transition: 1.5s ease-in;
 }
 .next-slide h1:hover,
 .prev-slide h1:hover {
-  color: #000;
+  color: var(--textColor);
   transition: 500ms ease-in-out;
 }
 @keyframes fade {
@@ -144,11 +170,6 @@ h1 {
   to {
     opacity: 1;
   }
-}
-.product-section {
-  width: 100%;
-  height: 800px;
-  background: green;
 }
 .content {
   margin-left: 10%;
@@ -190,7 +211,205 @@ h1 {
   font-size: 1.2rem;
 }
 .hero-btn button:hover{
-    background:#e61c5f;
+    background:var(--changingColor);
     color: #fff;
     transition: 500ms ease;
+}
+/*--------------End of Slider Section---------------*/
+
+
+
+
+/*--------------Production-Section------------------*/
+.product-section{
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+.section-title{
+  display: flex;
+  justify-content:center;
+}
+.section-title h2{
+  font-family: Pacifico, Festive, Arial, Helvetica, sans-serif;
+  margin-top: 1%;
+  font-size:2.5rem;
+  letter-spacing: var(--letterSpacing);
+}
+.products-container{
+  width: 90vw;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 4rem;
+  grid-row-gap: 3rem;
+}
+.products{
+  width:350px;
+  height: 350px;
+  background:#fff;
+  position:relative;
+}
+.product-img{
+  display: block;
+  width: 100%;
+  min-height: 12rem;
+}
+.product-info{
+  margin: 15px 20px;
+  
+  width: 40%;
+}
+.product-name{
+  font-family: Poppins, "Montserrat Alternates", Montserrat, Arial, Helvetica;
+  font-size:1.1rem;
+  text-align: justify;
+}
+.price-product{
+  text-align:justify;
+}
+
+.addtoCart-btn{
+position: absolute;
+bottom: 0px;
+right: 1%;
+padding:1rem 2rem;
+border: none;
+outline: none;
+cursor: pointer;
+text-transform: uppercase;
+letter-spacing: 2px;
+transition:0.3s ease-in-out;
+font-family: Pacifico, Festive, Arial, Helvetica, sans-serif;
+font-weight: 800;
+}
+.addtoCart-btn:hover{
+  background: var(--changingColor);
+  color:#fff;
+}
+
+/*---------------End Production Section-------------------------*/
+
+
+
+/*------------------------Cart-Section-------------------------*/
+.cart-section{
+  width: 100%;
+  height: 100%;
+  position:fixed;
+  top: 0;
+  right:0;
+  z-index: 2;
+  background:transparent;
+  /*hide the cart*/
+ visibility:hidden;
+ transition:all 0.3s linear;
+}
+.cart{
+  position:fixed;
+  top: 0;
+  right:0;
+  background:#e0832c;
+  width:30%;
+  height:100%;
+  transition: all 0.3s linear;
+  /*hide the cart*/
+  transform: translateX(100%);
+  z-index: 3;
+  overflow:scroll;
+}
+.showCart {
+  transform: translateX(0);
+}
+
+
+.transparentBcg {
+  visibility: visible;
+}
+.close-cart{
+  display:inline-block;
+  margin-top: 3%;
+  margin-left: 7%;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.cart-title{
+font-family: Pacifico,Festive, Poppins, "Montserrat Alternates", Montserrat, Arial, Helvetica;
+margin-top: 3%;
+margin-left: 7%;
+font-size: 1.7rem;
+}
+
+.cart-item{
+  max-width: 940px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+  margin-left: 7%;
+}
+
+/*
+.cart-itemContainer{
+  background:#f01872;
+  max-width:940px;
+  display:flex;
+  align-items: center;
+  justify-content:space-around;
+}
+*/
+
+.cart-imageContainer{
+ width: 130px;
+ height:130px;
+ background:#fff;
+}
+.cart-imageContainer img{
+ width: 130px;
+ height:130px;
+ object-fit: cover;
+}
+.cartItem-name{
+  font-size: 1.4rem;;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.cartItem-price{
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+  letter-spacing:2px;
+}
+.remove-item{
+  font-size:1.4rem;
+  cursor: pointer;
+}
+.item-quantity{
+  padding:1.7rem;
+  text-align: center;
+}
+.item-quantity i{
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+.item-quantity h4{
+  font-size: 1.4rem;
+}
+.cart-footer{
+font-family: "Montserrat Alternates",Pacifico,Festive, Poppins, Montserrat, Arial, Helvetica;
+margin-top: 3%;
+margin-left: 7%;
+font-size: 1.3rem;
+max-width: 800px;
+}
+.clear-cart{
+  margin-top: 2%;
+  padding:10px 4rem;
+  outline: none;
+  border: none;
+  font-size: 1.3rem;
+  font-family: Pacifico,"Montserrat Alternates",Festive, Poppins, Montserrat, Arial, Helvetica;
+  cursor: pointer;
 }

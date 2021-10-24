@@ -31,15 +31,16 @@
         </ul>
       </nav>
       <div class="contact-num">
+        <i class="fas fa-phone"></i>
         <h3>+275789101391</h3>
       </div>
 
-      <button class="nav-btn">
-        <a href="cart.html"
-          ><i class="fas fa-shopping-cart shoppingCartButton"></i
-        ></a>
+      <button class="cart-btn">
+        <a href="#"><i class="fas fa-shopping-cart shoppingCartButton"></i></a>
+        <span class="cart-items"><h3>0</h3></span>
       </button>
     </header>
+    <!------------End of Header section------>
     <!--------------------Slider-Hero-Section------------>
     <section class="slider-section">
       <div class="slider">
@@ -84,9 +85,74 @@
         </div>
       </div>
     </section>
+    <!--------------------End of Slider-Hero-Section------------>
 
     <!--------------------Product-Section------------>
-    <section class="product-section"></section>
+    <section class="product-section">
+      <div class="section-title">
+        <h2>Explore Products</h2>
+      </div>
+      <div class="products-container">
+        <!--
+        <div class="products">
+          --Single Product--
+          <img
+            src="./images/img1.jpg"
+            alt="product-image"
+            class="product-img"
+          />
+          <div class="product-info">
+            <h3 class="product-name">King size Bed</h3>
+            <h4 class="price-product">$200</h4>
+          </div>
+          <button class="addtoCart-btn">
+            <i class="fas fa-shopping-cart shoppingCartButton"></i> Add to cart
+          </button>
+          --End of Single Product--
+        </div> -->
+      </div>
+    </section>
+    <!---------------------------End of product section-->
+
+    <!-------------------Cart Section-------------------->
+    <div class="cart-section">
+      <div class="cart">
+        <span class="close-cart">
+          <i class="fas fa-window-close"></i>
+        </span>
+        <h2 class="cart-title">Your Cart</h2>
+        <div class="cart-products">
+          <!--Cart Item
+          <div class="cart-container">
+        
+            <div class="cart-item">
+              <div class="cart-imageContainer">
+                <img src="./images/img1.jpg" alt="cart-product" />
+              </div>
+              <div class="cartItem-details">
+                <h4 class="cartItem-name">King Size Bed</h4>
+                <h5 class="cartItem-price">$200</h5>
+                <span class="remove-item">remove</span>
+              </div>
+              <div class="item-quantity">
+                <i class="fas fa-chevron-up"></i>
+                <h4 class="product-quantity">2</h4>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+           
+            </div>
+          </div> -->
+
+        </div>
+<!------------------------End of Cart Item-->
+        <div class="cart-footer">
+          <h3 class="item-total">
+            Your total amount is : $<span class="cart-total">400</span>
+          </h3>
+          <button class="clear-cart">Clear Cart</button>
+        </div>
+      </div>
+    </div>
 
     <script src="cart.js"></script>
   </body>
