@@ -206,7 +206,7 @@ class displayProductsUI {
               <div class="cartItem-details">
                 <h4 class="cartItem-name">${theProduct.title}</h4>
                 <h5 class="cartItem-price">$${theProduct.price}</h5>
-                <span class="remove-item" data-id = ${theProduct.id}>remove</span>
+                <span class="remove-item" data-id = ${theProduct.id}><i class="fas fa-trash"></i> remove</span>
               </div>
               <div class="item-quantity">
                 <i class="fas fa-chevron-up"data-id = ${theProduct.id}></i>

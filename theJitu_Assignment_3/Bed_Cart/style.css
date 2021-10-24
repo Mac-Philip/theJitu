@@ -2,10 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap");
 
 :root {
-  --primaryColor: #f09d51;
   --changingColor: #f01872;
   --textColor: #000;
-  --mainGrey: #ececec;
   --letterSpacing: 0.5rem;
   --mainTransition: all 0.3s linear;
 }
@@ -303,6 +301,7 @@ font-weight: 800;
   right:0;
   z-index: 2;
   background:transparent;
+ /* background:rgba(100, 98, 98, 0.8);*/
   /*hide the cart*/
  visibility:hidden;
  transition:all 0.3s linear;
@@ -311,7 +310,7 @@ font-weight: 800;
   position:fixed;
   top: 0;
   right:0;
-  background:#e0832c;
+  background:var(--changingColor);
   width:30%;
   height:100%;
   transition: all 0.3s linear;
@@ -340,6 +339,7 @@ font-family: Pacifico,Festive, Poppins, "Montserrat Alternates", Montserrat, Ari
 margin-top: 3%;
 margin-left: 7%;
 font-size: 1.7rem;
+color:#fff;
 }
 
 .cart-item{
@@ -376,15 +376,20 @@ font-size: 1.7rem;
   font-size: 1.4rem;;
   text-transform: capitalize;
   letter-spacing: 2px;
+  font-family: Poppins,"Montserrat Alternates", Montserrat, Arial, Helvetica,
+    sans-serif;
 }
 .cartItem-price{
   font-size: 1.4rem;
   margin: 0.5rem 0;
   letter-spacing:2px;
+  font-family: "Montserrat Alternates", Montserrat, Arial, Helvetica,
+    sans-serif;
 }
 .remove-item{
   font-size:1.4rem;
   cursor: pointer;
+  font-family: Pacifico;
 }
 .item-quantity{
   padding:1.7rem;
